@@ -5,6 +5,12 @@ from mytwitter.tests import base
 
 class TestApiCmd(base.BaseTestCase):
 
+    def setUp(self):
+        printf("Hello from SetUp")
+
+    def tearDown(self):
+        printf("Hello from tearDown")
+
     @mock.patch.object(api.parser, 'parse_args')
     @mock.patch.object(api, 'CONF')
     @mock.patch.object(api.log, 'configure_logging')
